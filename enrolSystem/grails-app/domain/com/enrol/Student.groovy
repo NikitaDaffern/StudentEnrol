@@ -16,7 +16,7 @@ String username
 
 String password
 
-String course
+Course course
 
     static constraints = {
 

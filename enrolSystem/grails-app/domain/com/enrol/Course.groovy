@@ -6,7 +6,7 @@ String department
 
 String title
 
-String leader
+Leader leader
 
 String code
 
@@ -22,10 +22,16 @@ double tuitionFees
 
 String studyMode
 
+String toString(){
+
+return title
+
+}
+
 
 double calculateFees(){
 
-4*fees
+4*tuitionFees
 
 }
 

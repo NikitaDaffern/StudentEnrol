@@ -8,11 +8,13 @@ String code
 
 int credits
 
-String lecturer
+Lecturer lecturer
 
 String course
 
 String description
+
+
 
     static constraints = {
 
