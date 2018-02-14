@@ -18,6 +18,13 @@ String password
 
 Course course
 
+String toString(){
+return name}
+
+static hasMany=[modules:Module]
+
+static belongsTo=[Module]
+
     static constraints = {
 
 name blank:false, nullable:false
@@ -35,6 +42,8 @@ password blank:false, nullable:false
 isFundingAvailable blank:false, nullable:false
 
 course blank:false, nullable:false
+
+
 
 
 

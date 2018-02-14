@@ -35,7 +35,7 @@ class BootStrap {
        office: '9275',
        bio: 'lorem ipsum').save()
 
-       def computing=new Course(
+       def course1=new Course(
        department: 'Computing',
        code: 'CS123',
        title: 'BSc Hon Computing',
@@ -47,7 +47,7 @@ class BootStrap {
        tuitionFees: '9000.00',
        description: 'LOREM IPSUM').save()
     
-       def GamesDevelopment=new Course(
+       def course2=new Course(
        department: 'Computing',
        code: 'GD123',
        title: 'BSc Hon Games Development',
@@ -60,7 +60,7 @@ class BootStrap {
        description: 'LOREM IPSUM').save()
 
 
-       def SoftwareDevelopment=new Course(
+       def course3=new Course(
        department: 'Computing',
        code: 'SD123',
        title: 'BSc Hon Software Development',
@@ -80,7 +80,7 @@ class BootStrap {
        username: 'b6029665',
        password: 'dhuiwy733u8d',
        isFundingAvailable: 'true',
-       course: computing).save()
+       course: course1).save()
 
        def student2=new Student(
        name: 'Tatjana Cerniha',
@@ -90,7 +90,7 @@ class BootStrap {
        username: 'b4028765',
        password: 'hdk01234209hu',
        isFundingAvailable: 'true',
-       course: GamesDevelopment).save()
+       course: course2).save()
 
        def student3=new Student(
        name: 'Bafrin Fattahi',
@@ -100,7 +100,7 @@ class BootStrap {
        username: 'b4294865',
        password: 'hdjdhq679hiwq982',
        isFundingAvailable: 'true',
-       course: SoftwareDevelopment).save()
+       course: course3).save()
 
        def lecturer1=new Lecturer(
        fullName: 'Lynne Dawson',
@@ -126,33 +126,64 @@ class BootStrap {
        office: '9423',
        bio: 'Information Systems lecturer').save()
 
-       def databases=new Module(
+       def module1=new Module(
        title: 'Databases',
        code: 'DB123',
        credits: '40',
        lecturer: lecturer1,
-       course: 'Computing',
        description: 'lorem ipsum').save()
 
-       def sysarch=new Module(
+       def module2=new Module(
        title: 'System Architectures',
        code: 'SA123',
        credits: '60',
        lecturer: lecturer2,
-       course: 'Computing',
        description: 'lorem ipsum').save()
 
-       def programming=new Module(
+       def module3=new Module(
        title: 'Programming',
        code: 'PR123',
        credits: '40',
        lecturer: lecturer3,
-       course: 'Computing',
        description: 'lorem ipsum').save()
 
-   
+       
 
-  
+   
+lecturer1.addToModules(module1)
+lecturer1.addToModules(module3)
+lecturer2.addToModules(module2)
+lecturer3.addToModules(module1)
+
+course1.addToLecturers(lecturer1)
+course2.addToLecturers(lecturer3)
+course3.addToLecturers(lecturer2)
+
+lecturer1.addToCourses(course2)
+lecturer2.addToCourses(course3)
+lecturer3.addToCourses(course1)
+
+course1.addToStudents(student1)
+course2.addToStudents(student3)
+course2.addToStudents(student2)
+course3.addToStudents(student1)
+
+module2.addToCourse(course1)
+module1.addToCourse(course3)
+module3.addToCourse(course2)
+
+module1.addToStudents(student1)
+module2.addToStudents(student2)
+module3.addToStudents(student3)
+
+student1.addToModules(module1)
+student1.addToModules(module2)
+student2.addToModules(module1)
+student2.addToModules(module3)
+student3.addToModules(module2)
+student3.addToModules(module3)
+
+
 
 }
     def destroy = {

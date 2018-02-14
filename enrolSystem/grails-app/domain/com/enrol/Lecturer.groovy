@@ -15,9 +15,13 @@ String office
 String bio
 
 String toString(){
-
 return fullName
 }
+
+static hasMany=[modules:Module, courses:Course]
+
+static belongsTo=[Course]
+
 
     static constraints = {
 

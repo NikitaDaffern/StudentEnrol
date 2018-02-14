@@ -28,6 +28,8 @@ return title
 
 }
 
+static hasMany=[lecturers:Lecturer, students:Student, modules:Module]
+
 
 double calculateFees(){
 

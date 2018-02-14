@@ -10,10 +10,15 @@ int credits
 
 Lecturer lecturer
 
-String course
-
 String description
 
+String toString(){
+ return title 
+}
+
+static hasMany=[course:Course, students:Student]
+
+static belongsTo=[Course]
 
 
     static constraints = {
